@@ -13,7 +13,7 @@ This project is a RESTful Django-based API for creating and retrieving messages 
 
 - Django
 - Django REST framework
-- MySQL
+- MySQL (to store users, and messages)
 - Docker
 - Docker Compose
 
@@ -49,37 +49,13 @@ messaging_system/
 
 ## Setup and Installation
 
-### Local Development
-
-
-
-   ```bash
-   # Clone the repository:
-   git clone https://github.com/yourusername/messaging_system.git
-   cd messaging_system
-
-   # Create and activate a virtual environment:
-   python3 -m venv env
-   source env/bin/activate
-
-
-   # Install dependencies:
-   pip install -r requirements.txt
-
-   # Apply migrations:
-   python manage.py makemigrations
-   python manage.py migrate
-
-   # Run the development server:
-   python manage.py runserver
-   ```
     
 ###  Docker Setup
     
-    ```bash
+```bash
     # Clone the repository:
 
-    git clone https://github.com/yourusername/messaging_system.git
+    git clone https://github.com/rsravankr/messaging_system.git
     cd messaging_system
     
     # Ensure Docker and Docker Compose are installed.
@@ -90,7 +66,7 @@ messaging_system/
 
     # Run migrations inside the Docker container:
     docker-compose exec web python manage.py migrate
-    ```
+ ```
 
 ## Usage
 API Endpoints \
@@ -141,3 +117,10 @@ Search within messages:
 URL: http://localhost:8000/api/messages/search/<user_id>/?query=<search_term> \
 Method: GET \
 Headers: Authorization token \
+
+### Extensibility
+
+Split message service into 3 seperate services for the apis
+1. Auth service
+2. Message Service
+3. Search service
