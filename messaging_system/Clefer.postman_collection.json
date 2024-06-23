@@ -1,0 +1,325 @@
+{
+	"info": {
+		"_postman_id": "bb9e98ee-f221-4f69-a6d1-81b7bb27f79d",
+		"name": "Clefer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "3061434"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user8\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/auth/register/"
+			},
+			"response": [
+				{
+					"name": "register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user5\",\n    \"email\": \"user3@gmail.com\",\n    \"password\": \"password3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/api/auth/register/"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user8\",\n    \"email\": \"user@gmail.com\",\n    \"password\": \"password\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/auth/login/"
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user5\",\n    \"email\": \"user3@gmail.com\",\n    \"password\": \"password3\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/api/auth/register/"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 991587fb23862031850e70914f1ef63e1089f050bffa5b81ab75e7a3a2bad06c",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"user\": {\n        \"username\": \"user1\",\n        \"email\": \"user@example.com\"\n    },\n    \"token\": \"5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/auth/logout/"
+			},
+			"response": []
+		},
+		{
+			"name": "send message",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"user\": {\n    //     \"id\": 8,\n    //     \"username\": \"user45\",\n    //     \"email\": \"user@example.com\"\n    // },\n    \"sender\": 7,\n    \"receiver\": 2,\n    \"content\": \"Hello, how are you?\" //,\n    // \"token\": \"2102040a69f2ec0434871687720420113e373b2a935074c5c56949298104a854\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/messages/send/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"messages",
+						"send",
+						""
+					],
+					"query": [
+						{
+							"key": "Authorization",
+							"value": "5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "send message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"user5\",\n    \"sender\": \"user5\",\n    \"reciever\": \"user4\",\n    \"content\": \"hello\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/messages/send/?token=55efde77ecbd08cfa34e8086b4fb971334933ae2a82f4b6f9b410f0c42a83527",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"messages",
+								"send",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "55efde77ecbd08cfa34e8086b4fb971334933ae2a82f4b6f9b410f0c42a83527"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				},
+				{
+					"name": "send message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    // \"user\": {\n    //     \"id\": 8,\n    //     \"username\": \"user45\",\n    //     \"email\": \"user@example.com\"\n    // },\n    \"sender\": 7,\n    \"receiver\": 2,\n    \"content\": \"Hello, how are you?\" //,\n    // \"token\": \"2102040a69f2ec0434871687720420113e373b2a935074c5c56949298104a854\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/messages/send/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"messages",
+								"send",
+								""
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "get messages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/messages/thread/2/"
+			},
+			"response": [
+				{
+					"name": "get messages",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token 5f065e0a2b188be868a580ada7a51cb4e34a072e5ec17f7ffc7bb3e23200c6f5",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:8000/api/messages/thread/2/"
+					},
+					"_postman_previewlanguage": null,
+					"header": null,
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "search messages",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token dc1711135f5bdbee33449fe23c4c6b34f41a742159112a14511bc4092f7dafda",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"user5\",\n    \"email\": \"user3@gmail.com\",\n    \"password\": \"password3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8000/api/messages/search/6/"
+			},
+			"response": []
+		}
+	]
+}
